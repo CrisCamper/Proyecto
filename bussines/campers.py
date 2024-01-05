@@ -1,8 +1,8 @@
 from commons.utils import save_to_json, limpiar_pantalla
 
 def crear_camper (): # Funcion para crear un nuevo camper
-    while True:
-        lista_campers = []
+    lista_campers = []
+    while True:        
         try:
             name = input('Ingrese nombre del Camper: ')
             last_names = input('Ingrese apellidos del camper: ')

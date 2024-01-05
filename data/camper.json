@@ -1,0 +1,68 @@
+[
+  [
+    {
+      "Nombre": "xxx",
+      "Apellidos": "xxx",
+      "Identificacion": 123,
+      "Direccion": "123",
+      "Acudiente": "123",
+      "Numero de contacto": 12,
+      "Telefono fijo": 3,
+      "Estado del camper": "123"
+    }
+  ],
+  [
+    {
+      "Nombre": "xxx",
+      "Apellidos": "xxx",
+      "Identificacion": 123,
+      "Direccion": "123",
+      "Acudiente": "123",
+      "Numero de contacto": 12,
+      "Telefono fijo": 3,
+      "Estado del camper": "123"
+    },
+    {
+      "Nombre": "123",
+      "Apellidos": "12",
+      "Identificacion": 3,
+      "Direccion": "123",
+      "Acudiente": "12",
+      "Numero de contacto": 3,
+      "Telefono fijo": 123,
+      "Estado del camper": "32"
+    }
+  ],
+  [
+    {
+      "Nombre": "xxx",
+      "Apellidos": "xxx",
+      "Identificacion": 123,
+      "Direccion": "123",
+      "Acudiente": "123",
+      "Numero de contacto": 12,
+      "Telefono fijo": 3,
+      "Estado del camper": "123"
+    },
+    {
+      "Nombre": "123",
+      "Apellidos": "12",
+      "Identificacion": 3,
+      "Direccion": "123",
+      "Acudiente": "12",
+      "Numero de contacto": 3,
+      "Telefono fijo": 123,
+      "Estado del camper": "32"
+    },
+    {
+      "Nombre": "12",
+      "Apellidos": "31",
+      "Identificacion": 23,
+      "Direccion": "12",
+      "Acudiente": "3",
+      "Numero de contacto": 123,
+      "Telefono fijo": 1,
+      "Estado del camper": "23"
+    }
+  ]
+]
