@@ -2,16 +2,16 @@ import json
 import os
 from commons.utils import limpiar_pantalla
 
-
 def load_campers_json():
     try:
       with open(os.path.join("data", "campers.json"), 'r') as archivo_json:        
         lista_campers = json.load(archivo_json)
-        print("La lista de campers ha sido guardada")
         return lista_campers
     except Exception as e:
-      print(f"Error al guardar el archivo: {e}")
+      print(f"Error al cargar el archivo: {e}")
+
 lista_campers = load_campers_json()
+
 def crear_camper (): # Funcion para crear un nuevo camper
     while True:        
         try:
@@ -55,6 +55,7 @@ def crear_camper (): # Funcion para crear un nuevo camper
 
         except ValueError as e:  # Capturamos la excepción específica para errores de valor
             print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
+
 def guardar_json(): # Funcion para guardar la informacion de un camper en JSON
     try:
       with open(os.path.join("data", "campers.json"), 'w') as archivo_json:
@@ -66,3 +67,48 @@ def guardar_json(): # Funcion para guardar la informacion de un camper en JSON
         print("Error al decodificar el archivo JSON . El formato podría ser incorrecto.")
     except Exception as e:
         print(f"Error desconocido:{e}")
+
+def listar_campers(): # Funcion para listar los campers
+    for camper in lista_campers:
+        print (camper)
+
+def modificar_camper():
+    # Mostrar la lista de campers
+    print("Lista de campers:")
+    listar_campers()
+    
+    try:
+        id_modificar = int(input("Ingrese el ID del camper que desea modificar: "))
+        limpiar_pantalla()
+        
+        # Buscar el camper por ID
+        camper_encontrado = None
+        for camper in lista_campers:
+            if camper['Identificacion'] == id_modificar:
+                camper_encontrado = camper
+                break
+
+        if camper_encontrado:
+            # Mostrar la información actual del camper
+            print("Información actual del camper:")
+            print(camper_encontrado)
+
+            # Solicitar la nueva información del camper
+            print("Ingrese la nueva información del camper:")
+            camper_encontrado['Nombre'] = input('Nuevo nombre del Camper: ')
+            camper_encontrado['Apellidos'] = input('Nuevos apellidos del camper: ')
+            camper_encontrado['Direccion'] = input('Nueva direccion del camper: ')
+            camper_encontrado['Acudiente'] = input('Nuevo nombre del acudiente: ')
+            camper_encontrado['Numero de contacto'] = int(input('Nuevo numero de contacto: '))
+            camper_encontrado['Telefono fijo'] = int(input('Nuevo numero de telefono fijo: '))
+            camper_encontrado['Estado del camper'] = input('Nuevo estado del camper: ')
+
+            # Guardar los cambios en el archivo JSON
+            guardar_json()
+            limpiar_pantalla() # limpiamos la pantalla para mostrar el siguiente mensaje gratificante :)
+            print(f"\nCamper con ID {id_modificar} modificado exitosamente.")
+        else:
+            print(f"\nNo se encontró un camper con el ID {id_modificar}.")
+
+    except ValueError as e:
+        print(f"Error: {e}. Asegúrese de ingresar un número válido como ID.")

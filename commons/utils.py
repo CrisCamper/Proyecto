@@ -4,6 +4,7 @@ import os
 
 def limpiar_pantalla(): # Funcion para limpiar pantalla
     os.system('clear' if os.name == 'posix' else 'cls')   
+
 def validar_opcion(enunciando,inferior,superior): # Funcion para validar opciones
     while True:
         try:
