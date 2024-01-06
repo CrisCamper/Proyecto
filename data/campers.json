@@ -1,32 +1,22 @@
 [
     {
-        "Nombre": "Cristopher daniel",
-        "Apellidos": "Ramirez Buitrago",
-        "Identificacion": 1098675457,
-        "Direccion": "Bucaramanga",
-        "Acudiente": "Kymberlin Contreras",
-        "Numero de contacto": 3183427373,
-        "Telefono fijo": 3183427373,
-        "Estado del camper": "Inscrito"
+        "Nombres del Camper": "Cristopher",
+        "Apellidos del Camper": "Buitrago",
+        "Identificacion": 1,
+        "Direccion": "EL PRADO",
+        "Acudiente": "KIM",
+        "Numero de contacto": 1919,
+        "Telefono fijo": 1919,
+        "Estado del camper": "aprobado"
     },
     {
-        "Nombre": "Alvaro Stevan",
-        "Apellidos": "Rojas Lizaraso",
-        "Identificacion": 1076543678,
-        "Direccion": "Floridablanca",
-        "Acudiente": "Alvaro Rojas",
-        "Numero de contacto": 3123456783,
-        "Telefono fijo": 3124653456,
-        "Estado del camper": "Inscrito"
-    },
-    {
-        "Nombres del Camper": "Thomas Andres",
-        "Apellidos del Camper": "Olaya Pinto",
-        "Identificacion": 1078654378,
-        "Direccion": "Piedecuesta",
-        "Acudiente": "Andres Olaya",
-        "Numero de contacto": 315678901,
-        "Telefono fijo": 3157865458,
-        "Estado del camper": "Inscrito"
+        "Nombres del Camper": "Thomas",
+        "Apellidos del Camper": "Olaya",
+        "Identificacion": 2,
+        "Direccion": "XXXX",
+        "Acudiente": "Andres",
+        "Numero de contacto": 1,
+        "Telefono fijo": 1,
+        "Estado del camper": "aprobado"
     }
 ]

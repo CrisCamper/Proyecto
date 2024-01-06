@@ -2,10 +2,11 @@ from commons.utils import validar_opcion
 
 def menu_principal():  # Menu principal
     print('*******<MENÚ>*******')
-    print('* 1.-------Campers *')
-    print('* 2.---------Salir *')
+    print('* 1.-------CAMPERS *')
+    print('* 2.------TRAINERS *')
+    print('* 3.---------SALIR *')
     print('********************')
-    op = validar_opcion('Opción: ', 1, 2)
+    op = validar_opcion('Opción: ', 1, 3)
     return op  # this line to return the user's choice
 
 def menu_campers(): # Menú campers
@@ -15,5 +16,15 @@ def menu_campers(): # Menú campers
     print('* 3.-----------MODIFICAR CAMPER *')
     print('* 4.----------------------SALIR *')
     print('*********************************')
+    op = validar_opcion('Opción: ',1,4)
+    return op
+
+def menu_trainers(): # Menú trainers
+    print('************<TRAINERS>************')
+    print('* 1.---------------CREAR TRAINER *')
+    print('* 2.--------------LISTAR TRAINER *')
+    print('* 3.-----------MODIFICAR TRAINER *')
+    print('* 4.-----------------------SALIR *')
+    print('**********************************')
     op = validar_opcion('Opción: ',1,4)
     return op

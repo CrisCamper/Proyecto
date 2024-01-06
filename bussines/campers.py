@@ -21,12 +21,12 @@ def crear_camper (): # Funcion para crear un nuevo camper
             # Aplicamos la funcion promedio para verificar el promedio entre la nota teorica y la nota practica
             resultado_prueba = promedio(teoric_note,practical_note)
             if resultado_prueba < 60:
-                condicion_aspirante = 'No inscrito'
+                condicion_aspirante = 'No aprobado'
             else:
-                condicion_aspirante = 'Inscrito'
+                condicion_aspirante = 'aprobado'
             
-            # Si la condicion del aspirante es Inscrito, accionamos este bloque de codigo el cual convertira en camper al aspirante
-            if condicion_aspirante == 'Inscrito':
+            # Si la condicion del aspirante es aprobado, accionamos este bloque de codigo el cual convertira en camper al aspirante
+            if condicion_aspirante == 'aprobado':
                 name = input('Ingrese nombre del Camper: ')
                 last_names = input('Ingrese apellidos del camper: ')
                 id = int(input('Ingrese Numero de identificacion: '))
@@ -35,7 +35,7 @@ def crear_camper (): # Funcion para crear un nuevo camper
                 contact = int(input('Numero de contacto: '))
                 permanent_contact = int(input('Numero de telefono fijo [Puede ser el mismo de contacto]: '))
 
-                #Según el promedio, el aspirante será inscrito o no
+                #Según el promedio, el aspirante será aprobado o no
                 state = condicion_aspirante
 
                 camper = { # Creamos un diccionario con la informacion del camper
@@ -68,14 +68,15 @@ def crear_camper (): # Funcion para crear un nuevo camper
                     else:
                         print('Opcion no reconocida :(')
 
-            # Si la condicion del aspirante es 'no inscrito', activamos el siguiente bloque de codigo
-            elif condicion_aspirante == 'No inscrito':
+            # Si la condicion del aspirante es 'no aprobado', activamos el siguiente bloque de codigo
+            elif condicion_aspirante == 'No aprobado':
                 limpiar_pantalla()
                 print(f'Lo sentimos, nota del aspirante menor a 60, estado del aspirante: {condicion_aspirante}')
                 while True:
                     another_entry = input('¿Desea agregar otro aspirante? [y/n]: ') # Preguntamos al usuario si desea agragar otro aspirante
                     if another_entry.lower() == 'y':
                         print('------>[ningun dato guardado]<------')
+                        limpiar_pantalla()
                         # Rompemos el bucle interno para entrar al principal
                         break
                     elif another_entry.lower() == 'n':
@@ -129,8 +130,6 @@ def modificar_camper(): # Funcion para modificar campers
 
             # Solicitar la nueva información del camper
             print("Ingrese la nueva información del camper:")
-            camper_encontrado['Nombre'] = input('Nuevo nombre del Camper: ')
-            camper_encontrado['Apellidos'] = input('Nuevos apellidos del camper: ')
             camper_encontrado['Direccion'] = input('Nueva direccion del camper: ')
             camper_encontrado['Acudiente'] = input('Nuevo nombre del acudiente: ')
             camper_encontrado['Numero de contacto'] = int(input('Nuevo numero de contacto: '))
