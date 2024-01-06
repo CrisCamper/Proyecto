@@ -12,3 +12,4 @@ while True:
         if 1:
             limpiar_pantalla()
             crear_camper()
+            
