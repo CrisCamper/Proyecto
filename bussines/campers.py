@@ -72,7 +72,7 @@ def listar_campers(): # Funcion para listar los campers
     for camper in lista_campers:
         print (camper)
 
-def modificar_camper():
+def modificar_camper(): # Funcion para modificar campers
     # Mostrar la lista de campers
     print("Lista de campers:")
     listar_campers()
@@ -112,3 +112,14 @@ def modificar_camper():
 
     except ValueError as e:
         print(f"Error: {e}. Asegúrese de ingresar un número válido como ID.")
+
+#def asignar_ruta_entrenamiento(camper, ruta):
+#    # Verificar si la ruta es válida
+#    if ruta in rutas_entrenamiento:
+#        # Implementar lógica para asignar el camper a la ruta
+#        # Puedes utilizar diccionarios para almacenar esta información
+#        # Por ejemplo: asignaciones_rutas = {"Ruta NodeJS": [], "Ruta Java": [], "Ruta NetCore": []}
+#        asignaciones_rutas[ruta].append(camper)
+#        print(f"{camper} asignado a {ruta}")
+#    else:
+#        print("Ruta no válida.")
