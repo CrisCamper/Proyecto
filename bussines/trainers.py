@@ -1,6 +1,7 @@
 import json
 import os
-from commons.utils import limpiar_pantalla, promedio
+import random
+from commons.utils import limpiar_pantalla
 
 def load_trainers_json():
     try:
@@ -18,33 +19,36 @@ def crear_trainer (): # Funcion para crear un nuevo trainer
 
     while True:        
         try:
-                name = input('Ingrese nombre del Trainer: ')
-                last_names = input('Ingrese apellidos del trainer: ')
-                id = int(input('Ingrese Numero de identificacion: '))
-                direction = input('Ingrese direccion del Triner: ')
-                contact = int(input('Numero de contacto: '))
-                emergency_contact = int(input('Numero de emergencia: '))
-                while True:
-                    path = input('Ingrese la ruta del trainer: ')
-                    if path.lower() in paths:
-                        break # Si la ruta ingresada está en paths, rompemos el bucle interno para pasar al principal
-                    else:
-                        print('Lo sentimos, Ruta no encontrada :[')
-                        print('Ingrese una ruta valida')
+                name_list = ['Alvaro', 'Diego', 'Eduardo', 'Pepito', 'Hector', 'Esteban', 'Jorge', 'Farz']
+                last_names_list = ['Hernandez', 'Calizares', 'Hurtado', 'Sanchez', 'Ramirez', 'Buitrago', 'Washington']
+                directions_list = ['Bucaramanga', 'Jardin de aurora', 'Puerta del sol', 'Diamante 2', 'San martin', 'Niza', 'Caldas']
+                contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
+                permanent_contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
+                paths = ['nodejs', 'java', 'netcore']
 
-                trainer = { # Creamos un diccionario con la informacion del trainer
-                    'Nombres del Trainer': name,
-                    'Apellidos del Trainer': last_names,
-                    'Identificacion': id,
-                    'Direccion': direction,
-                    'Numero de contacto': contact,
-                    'Numero de emergencia': emergency_contact,
-                    'Ruta del Trainer': path
+              
+                for i in range(33): # nombres aleatorios
+                    name = random.choice(name_list)
+                    last_names = random.choice(last_names_list)
+                    id = i
+                    direction = random.choice(directions_list)
+                    contact = random.choice(contacts_list)
+                    permanent_contact = random.choice(permanent_contacts_list)
+                    path = random.choice(paths)
 
-                }
+                    trainer= { # Creamos un diccionario con la informacion del trainer
+                        'Nombres del trainer': name,
+                        'Apellidos del trainer': last_names,
+                        'Identificacion': id,
+                        'Direccion': direction,
+                        'Numero de contacto': contact,
+                        'Telefono fijo': permanent_contact,
+                        'Ruta': path
 
-                lista_trainers.append(trainer)
-                guardar_json()
+                    }
+
+                    lista_trainers.append(trainer)
+                    guardar_json()
 
                 while True: # Creamos un bucle temporal para Preguntar al usuario si desea ingresar un nuevo trainer
                     limpiar_pantalla() # Limpiamos la pantalla
@@ -99,10 +103,7 @@ def modificar_trainers(): # Funcion para modificar trainers
                 break
 
         if trainer_encontrado:
-            # Mostrar la información actual del trainer
-            print("Información actual del trainer:")
-            print(trainer_encontrado)
-
+     
             # Solicitar la nueva información del trainer
             print("Ingrese la nueva información del trainer:")
             trainer_encontrado['Direccion'] = input('Nueva direccion del trainer: ')

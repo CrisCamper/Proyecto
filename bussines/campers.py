@@ -1,5 +1,6 @@
 import json
 import os
+import random
 from commons.utils import limpiar_pantalla, promedio
 
 def load_campers_json():
@@ -27,31 +28,40 @@ def crear_camper (): # Funcion para crear un nuevo camper
             
             # Si la condicion del aspirante es aprobado, accionamos este bloque de codigo el cual convertira en camper al aspirante
             if condicion_aspirante == 'aprobado':
-                name = input('Ingrese nombre del Camper: ')
-                last_names = input('Ingrese apellidos del camper: ')
-                id = int(input('Ingrese Numero de identificacion: '))
-                direction = input('Ingrese direccion del camper: ')
-                attendant = input('Ingrese nombre del acudiente: ')
-                contact = int(input('Numero de contacto: '))
-                permanent_contact = int(input('Numero de telefono fijo [Puede ser el mismo de contacto]: '))
+                
+                name_list = ['Alvaro', 'Diego', 'Eduardo', 'Pepito', 'Hector', 'Esteban', 'Jorge', 'Farz']
+                last_names_list = ['Hernandez', 'Calizares', 'Hurtado', 'Sanchez', 'Ramirez', 'Buitrago', 'Washington']
+                directions_list = ['Bucaramanga', 'Jardin de aurora', 'Puerta del sol', 'Diamante 2', 'San martin', 'Niza', 'Caldas']
+                attendants_list = ['Roberto', 'Manuel', 'Hernan', 'John']
+                contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
+                permanent_contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
 
                 #Según el promedio, el aspirante será aprobado o no
                 state = condicion_aspirante
+                for i in range(33):
+    
+                    name = random.choice(name_list)
+                    last_names = random.choice(last_names_list)
+                    id = i
+                    direction = random.choice(directions_list)
+                    attendant = random.choice(attendants_list)
+                    contact = random.choice(contacts_list)
+                    permanent_contact = random.choice(permanent_contacts_list)
 
-                camper = { # Creamos un diccionario con la informacion del camper
-                    'Nombres del Camper': name,
-                    'Apellidos del Camper': last_names,
-                    'Identificacion': id,
-                    'Direccion': direction,
-                    'Acudiente': attendant,
-                    'Numero de contacto': contact,
-                    'Telefono fijo': permanent_contact,
-                    'Estado del camper': state
+                    camper = { # Creamos un diccionario con la informacion del camper
+                        'Nombres del Camper': name,
+                        'Apellidos del Camper': last_names,
+                        'Identificacion': id,
+                        'Direccion': direction,
+                        'Acudiente': attendant,
+                        'Numero de contacto': contact,
+                        'Telefono fijo': permanent_contact,
+                        'Estado del camper': state
 
-                }
+                    }
 
-                lista_campers.append(camper)
-                guardar_json()
+                    lista_campers.append(camper)
+                    guardar_json()
 
                 while True: # Creamos un bucle temporal para Preguntar al usuario si desea ingresar un nuevo camper
                     limpiar_pantalla() # Limpiamos la pantalla
@@ -68,7 +78,7 @@ def crear_camper (): # Funcion para crear un nuevo camper
                     else:
                         print('Opcion no reconocida :(')
 
-            # Si la condicion del aspirante es 'no aprobado', activamos el siguiente bloque de codigo
+                # Si la condicion del aspirante es 'no aprobado', activamos el siguiente bloque de codigo
             elif condicion_aspirante == 'No aprobado':
                 limpiar_pantalla()
                 print(f'Lo sentimos, nota del aspirante menor a 60, estado del aspirante: {condicion_aspirante}')
@@ -124,9 +134,6 @@ def modificar_camper(): # Funcion para modificar campers
                 break
 
         if camper_encontrado:
-            # Mostrar la información actual del camper
-            print("Información actual del camper:")
-            print(camper_encontrado)
 
             # Solicitar la nueva información del camper
             print("Ingrese la nueva información del camper:")

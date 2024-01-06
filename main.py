@@ -6,7 +6,7 @@ from bussines.campers import crear_camper,listar_campers, modificar_camper
 from bussines.trainers import crear_trainer,listar_trainers, modificar_trainers
 
 #Functions
-def campers():
+def campers(): # Funcion general de camper (abraca toda la parte logica que tiene que ver con campers)
     limpiar_pantalla()
     op = menu_campers()
     if op == 1:
@@ -27,7 +27,7 @@ def campers():
         print('Saliendo...')
         limpiar_pantalla()
 
-def trainers():
+def trainers(): # Funcion general de trainer (abraca toda la parte logica que tiene que ver con trainers)
     limpiar_pantalla()
     op = menu_trainers()
     if op == 1:
