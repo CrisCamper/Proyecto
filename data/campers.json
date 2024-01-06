@@ -7,7 +7,7 @@
         "Acudiente": "Kymberlin Contreras",
         "Numero de contacto": 3183427373,
         "Telefono fijo": 3183427373,
-        "Estado del camper": "Sandbox"
+        "Estado del camper": "Inscrito"
     },
     {
         "Nombre": "Alvaro Stevan",
@@ -17,6 +17,16 @@
         "Acudiente": "Alvaro Rojas",
         "Numero de contacto": 3123456783,
         "Telefono fijo": 3124653456,
-        "Estado del camper": "Sandbox"
+        "Estado del camper": "Inscrito"
+    },
+    {
+        "Nombres del Camper": "Thomas Andres",
+        "Apellidos del Camper": "Olaya Pinto",
+        "Identificacion": 1078654378,
+        "Direccion": "Piedecuesta",
+        "Acudiente": "Andres Olaya",
+        "Numero de contacto": 315678901,
+        "Telefono fijo": 3157865458,
+        "Estado del camper": "Inscrito"
     }
 ]

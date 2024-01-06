@@ -15,3 +15,7 @@ def validar_opcion(enunciando,inferior,superior): # Funcion para validar opcione
                 print(f"Opción no está entre el intervalo de ({inferior}-{superior})")
         except ValueError:
             print("Por favor, introduce un número válido. ")
+
+def promedio (teoric_note,practical_note): # Funcion para calificar la prueba
+    promedy = (teoric_note + practical_note)/2
+    return promedy
