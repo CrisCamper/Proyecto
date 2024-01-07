@@ -12,18 +12,15 @@ def load_areas_json(): # Funcion para cargar las areas disponibles
 
 lista_areas = load_areas_json
 
-def crear_area ():
+def crear_area (): 
    areas= {
         'artemis':[{"id":["14214","12314"]}],
         'sputnik':[],
         'apolo':[]
         #len(areas["artemis"]["id"]) < 33
-            #append
-        elif len(areas["sputnik"]["id"]) < 33
-        elif len(areas["apolo"]["id"]) < 33
-
-        else
-            print("ESta llena, elija otra area")
+        #   append
+        #elif len(areas["sputnik"]["id"]) < 33
+        #elif len(areas["apolo"]["id"]) < 33
+        #else
+        #print("ESta llena, elija otra area")
     }
-   
-   

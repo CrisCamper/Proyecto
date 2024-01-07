@@ -24,7 +24,6 @@ def guardar_json(lista, archivojson): # Funcion para guardar la informacion en J
     try:
       with open(os.path.join("data", f"{archivojson}.json"), 'w') as archivo_json:
         json.dump(lista, archivo_json, indent = 4)
-        print("La lista de campers ha sido guardada")
     except FileNotFoundError: # Si el archivo no existe imprime un mensaje
         print("El archivo no existe. Puede que aún no haya campers guardados.")
     except json.JSONDecodeError:
