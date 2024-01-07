@@ -4,6 +4,7 @@ from commons.utils import limpiar_pantalla
 from commons.menus import menu_principal, menu_campers, menu_trainers
 from bussines.campers import registrar_camper,listar_campers, modificar_camper,inscribir_camper
 from bussines.trainers import crear_trainer,listar_trainers, modificar_trainers
+from bussines.areas import llenar_areas
 
 #Functions
 def campers(): # Funcion general de camper (abraca toda la parte logica que tiene que ver con campers)
@@ -46,6 +47,8 @@ def trainers(): # Funcion general de trainer (abraca toda la parte logica que ti
         
     elif op == 4:
         print('Saliendo...')
+
+
         
 
 # start
@@ -56,5 +59,7 @@ while True:
         campers()
     elif op == 2:
         trainers()
+    elif op == 3:
+        llenar_areas()
     elif op == 4:
         break
