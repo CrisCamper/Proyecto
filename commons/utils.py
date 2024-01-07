@@ -30,3 +30,6 @@ def guardar_json(lista, archivojson): # Funcion para guardar la informacion en J
         print("Error al decodificar el archivo JSON . El formato podría ser incorrecto.")
     except Exception as e:
         print(f"Error desconocido:{e}")
+
+def key_for_continue (): # function for press any key to continue
+    input('[Presione cualquier tecla para continuar]')

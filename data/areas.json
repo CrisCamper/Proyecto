@@ -1,3 +1,17 @@
 [
-    
+    {
+        "sputnik": {
+            "Campers id": []
+        }
+    },
+    {
+        "artemis": {
+            "Campers id": []
+        }
+    },
+    {
+        "apolo": {
+            "Campers id": []
+        }
+    }
 ]
