@@ -3,10 +3,12 @@
         "Nombres del trainer": "Hector",
         "Apellidos del trainer": "Calizares",
         "Identificacion": 0,
-        "Direccion": "San martin",
-        "Numero de contacto": 314689245,
+        "Direccion": "Diamante 2",
+        "Numero de contacto": 1111111,
         "Telefono fijo": 31245678940,
-        "Ruta": "nodejs"
+        "Ruta": "nodejs",
+        "Numero de emergencia": 1111111,
+        "Ruta del Trainer": "java"
     },
     {
         "Nombres del trainer": "Diego",

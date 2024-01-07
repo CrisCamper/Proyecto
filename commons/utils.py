@@ -19,3 +19,15 @@ def validar_opcion(enunciando,inferior,superior): # Funcion para validar opcione
 def promedio (teoric_note,practical_note): # Funcion para calificar la prueba
     promedy = (teoric_note + practical_note)/2
     return promedy
+
+def guardar_json(lista, archivojson): # Funcion para guardar la informacion en JSON
+    try:
+      with open(os.path.join("data", f"{archivojson}.json"), 'w') as archivo_json:
+        json.dump(lista, archivo_json, indent = 4)
+        print("La lista de campers ha sido guardada")
+    except FileNotFoundError: # Si el archivo no existe imprime un mensaje
+        print("El archivo no existe. Puede que aún no haya campers guardados.")
+    except json.JSONDecodeError:
+        print("Error al decodificar el archivo JSON . El formato podría ser incorrecto.")
+    except Exception as e:
+        print(f"Error desconocido:{e}")

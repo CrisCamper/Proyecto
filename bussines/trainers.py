@@ -1,7 +1,7 @@
 import json
 import os
 import random
-from commons.utils import limpiar_pantalla
+from commons.utils import guardar_json, limpiar_pantalla
 
 def load_trainers_json():
     try:
@@ -48,7 +48,7 @@ def crear_trainer (): # Funcion para crear un nuevo trainer
                     }
 
                     lista_trainers.append(trainer)
-                    guardar_json()
+                    guardar_json(lista_trainers, 'trainers')
 
                 while True: # Creamos un bucle temporal para Preguntar al usuario si desea ingresar un nuevo trainer
                     limpiar_pantalla() # Limpiamos la pantalla
@@ -68,17 +68,7 @@ def crear_trainer (): # Funcion para crear un nuevo trainer
         except ValueError as e:  # Capturamos la excepción específica para errores de valor
             print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
 
-def guardar_json(): # Funcion para guardar la informacion de un trainer en JSON
-    try:
-      with open(os.path.join("data", "trainers.json"), 'w') as archivo_json:
-        json.dump(lista_trainers, archivo_json, indent = 4)
-        print("La lista de trainers ha sido guardada")
-    except FileNotFoundError: # Si el archivo no existe imprime un mensaje
-        print("El archivo no existe. Puede que aún no haya trainers guardados.")
-    except json.JSONDecodeError:
-        print("Error al decodificar el archivo JSON . El formato podría ser incorrecto.")
-    except Exception as e:
-        print(f"Error desconocido:{e}")
+guardar_json(lista_trainers, 'trainers')
 
 def listar_trainers(): # Funcion para listar los trainers
     for trainer in lista_trainers:
@@ -121,7 +111,7 @@ def modificar_trainers(): # Funcion para modificar trainers
 
 
             # Guardar los cambios en el archivo JSON
-            guardar_json()
+            guardar_json(lista_trainers, 'trainers')
             limpiar_pantalla() # limpiamos la pantalla para mostrar el siguiente mensaje gratificante :)
             print(f"\ntrainer con ID {id_modificar} modificado exitosamente.")
         else:
