@@ -11,6 +11,7 @@ def load_campers_json(): # Funcion para cargar campers.json y retornar una lista
     except Exception as e:
       print(f"Error al cargar el archivo: {e}")
 
+# load camper list
 lista_campers = load_campers_json()
 
 def inscribir_camper (): # Funcion para inscribir un camper
@@ -137,8 +138,6 @@ def registrar_camper (): # Funcion para crear un nuevo camper
         except ValueError as e:  # Capturamos la excepción específica para errores de valor
             print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
 
-guardar_json(lista_campers, 'campers') # funcion para poder guardar informacion en JSON
-
 def listar_campers(): # Funcion para listar los campers
     for camper in lista_campers:
         for data in camper:
@@ -182,4 +181,5 @@ def modificar_camper(): # Funcion para modificar campers
 
     except ValueError as e:
         print(f"Error: {e}. Asegúrese de ingresar un número válido como ID.")
-  
+
+guardar_json(lista_campers, 'campers') # funcion para poder guardar informacion en JSON

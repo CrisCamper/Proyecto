@@ -11,6 +11,7 @@ def load_trainers_json():
     except Exception as e:
       print(f"Error al cargar el archivo: {e}")
 
+# Load trainer list
 lista_trainers = load_trainers_json()
 # Rutas disponibles ['Ruta NodeJS', 'Ruta Java', 'Ruta NetCore']
 paths = ['nodejs', 'java', 'netcore']
@@ -68,8 +69,6 @@ def crear_trainer (): # Funcion para crear un nuevo trainer
         except ValueError as e:  # Capturamos la excepción específica para errores de valor
             print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
 
-guardar_json(lista_trainers, 'trainers')
-
 def listar_trainers(): # Funcion para listar los trainers
     for trainer in lista_trainers:
         for data in trainer:
@@ -119,3 +118,5 @@ def modificar_trainers(): # Funcion para modificar trainers
 
     except ValueError as e:
         print(f"Error: {e}. Asegúrese de ingresar un número válido como ID.")
+
+guardar_json(lista_trainers, 'trainers') # function to save data in trainers.json
