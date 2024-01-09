@@ -3,13 +3,13 @@
         "sputnik (netcore)": {
             "Campers id": [
                 {
-                    "Nombres del Camper": "YYY",
-                    "Apellidos del Camper": "yyy",
-                    "Identificacion": 1,
-                    "Direccion": "1",
-                    "Acudiente": "1",
-                    "Numero de contacto": 1,
-                    "Telefono fijo": 1,
+                    "Nombres del Camper": "ggg",
+                    "Apellidos del Camper": "6",
+                    "Identificacion": 6,
+                    "Direccion": "6",
+                    "Acudiente": "6",
+                    "Numero de contacto": 6,
+                    "Telefono fijo": 6,
                     "Estado del camper": "aprobado",
                     "Ruta": "sputnik (netcore)"
                 }
@@ -18,7 +18,17 @@
     },
     {
         "sputnik (netcore)": {
-            "Trainers id": []
+            "Trainers id": [
+                {
+                    "Nombres del trainer": "xx",
+                    "Apellidos del trainer": "xx",
+                    "Identificacion": 0,
+                    "Direccion": "y",
+                    "Numero de contacto": 0,
+                    "Telefono fijo": 0,
+                    "Ruta": "apolo (java)"
+                }
+            ]
         }
     },
     {
@@ -28,7 +38,17 @@
     },
     {
         "artemis (nodejs)": {
-            "Trainers id": []
+            "Trainers id": [
+                {
+                    "Nombres del trainer": "JOSE CARLOS",
+                    "Apellidos del trainer": "CORLAS KILONARIOS",
+                    "Identificacion": 1,
+                    "Direccion": "PANAMA",
+                    "Numero de contacto": 1,
+                    "Telefono fijo": 1,
+                    "Ruta": "artemis (nodejs)"
+                }
+            ]
         }
     },
     {
@@ -38,7 +58,17 @@
     },
     {
         "apolo (java)": {
-            "Trainers id": []
+            "Trainers id": [
+                {
+                    "Nombres del trainer": "xx",
+                    "Apellidos del trainer": "xx",
+                    "Identificacion": 0,
+                    "Direccion": "y",
+                    "Numero de contacto": 0,
+                    "Telefono fijo": 0,
+                    "Ruta": "apolo (java)"
+                }
+            ]
         }
     }
 ]

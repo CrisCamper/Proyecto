@@ -20,5 +20,49 @@
         "Telefono fijo": 1,
         "Estado del camper": "aprobado",
         "Ruta": "sputnik (netcore)"
+    },
+    {
+        "Nombres del Camper": "ff",
+        "Apellidos del Camper": "11",
+        "Identificacion": 2,
+        "Direccion": "0",
+        "Acudiente": "0",
+        "Numero de contacto": 0,
+        "Telefono fijo": 0,
+        "Estado del camper": "aprobado",
+        "Ruta": "sputnik (netcore)"
+    },
+    {
+        "Nombres del Camper": "ggg",
+        "Apellidos del Camper": "6",
+        "Identificacion": 6,
+        "Direccion": "PRADO",
+        "Acudiente": "xxx",
+        "Numero de contacto": 0,
+        "Telefono fijo": 0,
+        "Estado del camper": "aprobado",
+        "Ruta": "sputnik (netcore)"
+    },
+    {
+        "Nombres del Camper": "Carlos json",
+        "Apellidos del Camper": "java python",
+        "Identificacion": 2,
+        "Direccion": "Backend",
+        "Acudiente": "c#",
+        "Numero de contacto": 0,
+        "Telefono fijo": 0,
+        "Estado del camper": "inscrito",
+        "Ruta": "none"
+    },
+    {
+        "Nombres del Camper": "Morthy Python",
+        "Apellidos del Camper": "Linux Comando",
+        "Identificacion": 3,
+        "Direccion": "0",
+        "Acudiente": "Java",
+        "Numero de contacto": 0,
+        "Telefono fijo": 0,
+        "Estado del camper": "reprobado/riesgo",
+        "Ruta": "none"
     }
 ]

@@ -1,6 +1,6 @@
 import os
 import json
-from commons.utils import guardar_json, limpiar_pantalla, key_for_continue
+from commons.utils import guardar_json, key_for_continue
 from bussines.campers import load_campers_json
 from bussines.trainers import load_trainers_json
 
@@ -37,6 +37,7 @@ def verificar_capacidad_trainers(name_area,lista_areas, position_area):# functio
   current_campers = len(lista_areas[position_area][name_area]['Trainers id'])
   if current_campers >= max_capacity:
     print(f'La capacidad máxima de {name_area} ({max_capacity} trainers) ha sido alcanzada. No se pueden agregar más trainers.')
+    key_for_continue()
     return True
   else:
     return False
@@ -61,7 +62,6 @@ lista_campers_disponibles = load_campers_json()
 # Load trainer list
 lista_trainers_disponibles = load_trainers_json()
 # Save data in areas.json
-guardar_json(lista_areas, 'areas')
 # load areas list
 lista_areas = load_areas_json()
 
@@ -114,10 +114,10 @@ def listar_campers_area(name_area):
   if campers_encontrados:
       print(f'Campers en el área {name_area}:')
       for camper in campers_encontrados:
-          for key, value in camper.items():
-              print(f'{key}: {value}')
-          print('---------------------------')
-          key_for_continue()
+        for key, value in camper.items():
+          print(f'{key}: {value}')
+        print('---------------------------')
+      key_for_continue()
 
   else:
       print(f'No se encontraron campers en el área {name_area}.')
@@ -139,7 +139,8 @@ def agregar_trainer(name_area, position_area): # Function to add a trainer
           print(f'{key}: {value}')
         print('---------------------------')
       else:
-        print('No se encontraron entrenadores para el área especificada.')
+        print('No se encontraron trainers para el área especificada.')
+        key_for_continue()
       # Ask to Id of Trainer
 
       id_add = int(input(f'Ingrese el ID del Trainer que desea agregar a {name_area}: '))
@@ -161,18 +162,17 @@ def agregar_trainer(name_area, position_area): # Function to add a trainer
 
 def listar_trainers_area(name_area):
   try:
-    area_info = next((area[name_area] for area in lista_areas if name_area in area), {})
-    trainers_info = area_info.get("Trainers id", [])
-    
-    if trainers_info:
+    lista_trainers = load_trainers_json()
+    trainers_encontrados = [trainer for trainer in lista_trainers if trainer.get('Ruta') == name_area]
+    if trainers_encontrados:
       print(f'Trainers en el área {name_area}:')
-      for trainer in trainers_info:
+      for trainer in trainers_encontrados:
         for key, value in trainer.items():
-          print(key, ':', value)
+          print(f'{key}: {value}')
         print('---------------------------')
       key_for_continue()
     else:
       print(f'No se encontraron trainers en el área {name_area}.')
-    key_for_continue()
+      key_for_continue()
   except StopIteration:
     print(f'No se encontró el área {name_area} o no tiene trainers.')

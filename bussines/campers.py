@@ -74,7 +74,7 @@ def registrar_camper (): # Funcion para crear un nuevo camper
             limpiar_pantalla()
             camper_encontrado = None
             for camper in lista_campers:
-                if camper['Identificacion'] == id_modificar and camper['Estado del camper'] == 'inscrito':
+                if camper['Identificacion'] == id_modificar and camper['Estado del camper'] == 'inscrito' or 'aprobado':
                     camper_encontrado = camper
 
             teoric_note = int(input('Ingrese Nota de la prueba teorica del aspirante : '))
@@ -82,7 +82,7 @@ def registrar_camper (): # Funcion para crear un nuevo camper
             #funcion promedio para verificar el promedio entre la nota teorica y la nota practica
             resultado_prueba = promedio(teoric_note,practical_note)
             if resultado_prueba < 60:
-                estado = 'reprobado'
+                estado = 'reprobado/riesgo'
             else:
                 estado = 'aprobado'
             if camper_encontrado:
@@ -93,6 +93,7 @@ def registrar_camper (): # Funcion para crear un nuevo camper
                 print(f"\nCamper con ID {id_modificar} registrado exitosamente.")
             else:
                 print(f"\nNo se encontró un camper con el ID {id_modificar}.")
+            break
         except ValueError as e:  # Capturamos la excepción específica para errores de valor
             print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
             key_for_continue()
