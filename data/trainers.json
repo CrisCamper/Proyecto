@@ -2,28 +2,31 @@
     {
         "Nombres del trainer": "xx",
         "Apellidos del trainer": "xx",
-        "Identificacion": 0,
-        "Direccion": "y",
-        "Numero de contacto": 0,
-        "Telefono fijo": 0,
-        "Ruta": "apolo (java)"
-    },
-    {
-        "Nombres del trainer": "XXX",
-        "Apellidos del trainer": "XXX",
-        "Identificacion": 0,
-        "Direccion": "yyy",
-        "Numero de contacto": 0,
-        "Telefono fijo": 0,
+        "Identificacion": 1,
+        "Direccion": "xx",
+        "Numero de contacto": 1,
+        "Telefono fijo": 1,
+        "Jornada": "tarde",
         "Ruta": "sputnik (netcore)"
     },
     {
-        "Nombres del trainer": "JOSE CARLOS",
-        "Apellidos del trainer": "CORLAS KILONARIOS",
-        "Identificacion": 1,
-        "Direccion": "PANAMA",
+        "Nombres del trainer": "yyy",
+        "Apellidos del trainer": "yyy",
+        "Identificacion": 2,
+        "Direccion": "yyy",
         "Numero de contacto": 1,
         "Telefono fijo": 1,
+        "Jornada": "ma\u00f1ana",
+        "Ruta": "sputnik (netcore)"
+    },
+    {
+        "Nombres del trainer": "ccc",
+        "Apellidos del trainer": "ccc",
+        "Identificacion": 3,
+        "Direccion": "xxx",
+        "Numero de contacto": 1,
+        "Telefono fijo": 1,
+        "Jornada": "ma\u00f1ana",
         "Ruta": "artemis (nodejs)"
     }
 ]

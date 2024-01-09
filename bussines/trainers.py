@@ -15,6 +15,7 @@ def load_trainers_json():
 lista_trainers = load_trainers_json()
 # Rutas disponibles ['Ruta NodeJS', 'Ruta Java', 'Ruta NetCore']
 paths = ['artemis (nodejs)', 'apolo (java)', 'sputnik (netcore)']
+journeys = ['mañana','tarde']
 
 def crear_trainer (): # Funcion para crear un nuevo trainer
 
@@ -27,8 +28,18 @@ def crear_trainer (): # Funcion para crear un nuevo trainer
             contact = int(input('Input trainer´s contact number: '))
             permanent_contact = int(input('Input trainer´s permanent contact: '))
             while True:
-                path = input('Input path route: ')
+                print('correct example: mañana')
+                journey = input('Type trainer journey: ')              
+                if journey.lower() in journeys:
+                    journey = journey.lower()
+                    break
+                else:
+                    print('Lo sentimos, jornada no valida:[')
+                    print('Ingrese una jornada valida')
+
+            while True:
                 print('correct example: sputnik (netcore)')
+                path = input('Input path route: ')                
                 if path.lower() in paths:
                     path = path.lower()
                     break
@@ -43,6 +54,7 @@ def crear_trainer (): # Funcion para crear un nuevo trainer
                 'Direccion': direction,
                 'Numero de contacto': contact,
                 'Telefono fijo': permanent_contact,
+                'Jornada': journey,
                 'Ruta': path
             }
             

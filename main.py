@@ -6,6 +6,8 @@ from bussines.campers import registrar_camper, listar_campers, modificar_camper,
 from bussines.trainers import crear_trainer, listar_trainers, modificar_trainers
 from bussines.areas import agregar_campers, listar_campers_area, agregar_trainer, listar_trainers_area
 from bussines.reportes import campers_inscritos, campers_aprobados, campers_reprobados_riesgo, trainers_list, camper_trainer
+from bussines.matriculas import crear_matricula, ver_matriculas
+
 #Functions
 def campers(): # Funcion general de camper (abraca toda la parte logica que tiene que ver con campers)
     limpiar_pantalla()
@@ -127,7 +129,7 @@ def areas (): # Function general of areas (It covers all the logical part that h
     elif op == 5:
         print('Saliendo...')
 
-def reportes():
+def reportes(): #function general of reportes
     limpiar_pantalla()
     op = menu_reportes()
     # inscribied campers
@@ -153,6 +155,20 @@ def reportes():
     elif op == 6:
         print('Saliendo...')
 
+def matriculas(): # Function general of tutions
+    # Para ver el menu matriculas
+    limpiar_pantalla()
+    op = menu_matriculas()
+    # create tuition
+    if op == 1:
+        limpiar_pantalla()
+        crear_matricula()
+    elif op == 2:
+        limpiar_pantalla()
+        ver_matriculas()
+    elif op == 3:
+        print('Saliendo...')
+
 
 # start
 while True:
@@ -167,4 +183,8 @@ while True:
     elif op == 4:
         reportes()
     elif op == 5:
+        matriculas()
+        break
+    elif op == 6:
+        print('Saliendo...')
         break

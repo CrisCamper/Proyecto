@@ -6,9 +6,10 @@ def menu_principal():  # Menu principal
     print('* 2.-----------------TRAINERS *')
     print('* 3.------AREAS ENTRENAMIENTO *')
     print('* 4.-----------------REPORTES *')
-    print('* 5.--------------------SALIR *')
+    print('* 5.-------------- MATRICULAS *')
+    print('* 6.--------------------SALIR *')
     print('*******************************')
-    op = validar_opcion('Opción: ', 1, 5)
+    op = validar_opcion('Opción: ', 1, 6)
     return op  # this line to return the user's choice
 
 def menu_campers(): # Menú campers
@@ -92,3 +93,13 @@ def menu_reportes ():
     print('*********************************************')
     op = validar_opcion('Opción: ',1,6)
     return op
+
+def menu_matriculas ():
+    print('****************[MATRICULAS]***************')
+    print('* 1.----------------------CREAR MATRICULA *')
+    print('* 2.-----------------------VER MATRICULAS *')
+    print('* 3.--------------------------------SALIR *')
+    print('*******************************************')
+    op = validar_opcion('Opción: ',1,3)
+    return op
+

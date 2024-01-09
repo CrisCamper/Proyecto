@@ -1,6 +1,6 @@
 import os
 import json
-from commons.utils import guardar_json, key_for_continue
+from commons.utils import guardar_json, key_for_continue, limpiar_pantalla
 from bussines.campers import load_campers_json
 from bussines.trainers import load_trainers_json
 
@@ -33,9 +33,9 @@ def verificar_capacidad_trainers(name_area,lista_areas, position_area):# functio
   :param lista_areas: Lista de áreas.
   :param position_area: Posición del área a verificar.
   """
-  max_capacity = 1
-  current_campers = len(lista_areas[position_area][name_area]['Trainers id'])
-  if current_campers >= max_capacity:
+  max_capacity = 2
+  current_trainers = len(lista_areas[position_area][name_area]['Trainers id'])
+  if current_trainers >= max_capacity:
     print(f'La capacidad máxima de {name_area} ({max_capacity} trainers) ha sido alcanzada. No se pueden agregar más trainers.')
     key_for_continue()
     return True
@@ -57,6 +57,7 @@ lista_areas = [
   # Position 5
   {'apolo (java)': {'Trainers id': []}}
 ]
+
 # load camper list
 lista_campers_disponibles = load_campers_json()
 # Load trainer list
@@ -128,19 +129,18 @@ def agregar_trainer(name_area, position_area): # Function to add a trainer
   lista_areas = load_areas_json()
   lista_trainers_disponibles = load_trainers_json()
   while True:
+    limpiar_pantalla()
     try:
       if verificar_capacidad_trainers(name_area,lista_areas, position_area):
         return # If >33 left to function
 
-      found_trainer = next((trainer for trainer in lista_trainers_disponibles if trainer['Ruta'] == name_area), None)
-      if found_trainer:
-        print('Trainers Disponibles')
-        for key, value in found_trainer.items():
-          print(f'{key}: {value}')
-        print('---------------------------')
-      else:
-        print('No se encontraron trainers para el área especificada.')
-        key_for_continue()
+      print('Trainers Disponibles')
+      for trainer in lista_trainers_disponibles:
+        if trainer['Ruta'] == name_area:
+          for data in trainer:
+              print(data,':',trainer[data])
+          print('---------------------------')
+
       # Ask to Id of Trainer
 
       id_add = int(input(f'Ingrese el ID del Trainer que desea agregar a {name_area}: '))
