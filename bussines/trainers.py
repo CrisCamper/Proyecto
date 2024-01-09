@@ -15,6 +15,7 @@ def load_trainers_json():
 lista_trainers = load_trainers_json()
 # Rutas disponibles ['Ruta NodeJS', 'Ruta Java', 'Ruta NetCore']
 paths = ['artemis (nodejs)', 'apolo (java)', 'sputnik (netcore)']
+# Journeys
 journeys = ['mañana','tarde']
 
 def crear_trainer (): # Funcion para crear un nuevo trainer

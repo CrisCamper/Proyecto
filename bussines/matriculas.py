@@ -4,7 +4,7 @@ from commons.utils import key_for_continue, guardar_json
 from bussines.campers import load_campers_json
 from bussines.trainers import load_trainers_json
 
-def load_matriculas_json():
+def load_matriculas_json(): # function to load tution list
     try:
       with open(os.path.join("data", "matriculas.json"), 'r') as archivo_json:        
         lista_matriculas = json.load(archivo_json)
@@ -12,6 +12,7 @@ def load_matriculas_json():
     except Exception as e:
       print(f"Error al cargar el archivo: {e}")
 
+#tuitions list
 lista_matriculas = [
     # Position 0
     {'matricula (sputnik)': []},

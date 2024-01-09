@@ -66,7 +66,7 @@ lista_trainers_disponibles = load_trainers_json()
 # load areas list
 lista_areas = load_areas_json()
 
-def agregar_campers(name_area, position_area):
+def agregar_campers(name_area, position_area): # Function to add camper
   lista_areas = load_areas_json()
   lista_campers_disponibles = load_campers_json()
 
@@ -109,7 +109,7 @@ def agregar_campers(name_area, position_area):
       print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
       key_for_continue()    
 
-def listar_campers_area(name_area):
+def listar_campers_area(name_area): # Functions to list campers
   lista_campers = load_campers_json()
   campers_encontrados = [camper for camper in lista_campers if camper.get('Ruta') == name_area]
   if campers_encontrados:
@@ -160,7 +160,7 @@ def agregar_trainer(name_area, position_area): # Function to add a trainer
       print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
       key_for_continue()
 
-def listar_trainers_area(name_area):
+def listar_trainers_area(name_area):# Function to list trainer
   try:
     lista_trainers = load_trainers_json()
     trainers_encontrados = [trainer for trainer in lista_trainers if trainer.get('Ruta') == name_area]

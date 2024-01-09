@@ -82,7 +82,7 @@ def info_area(): # Function to see the info routes
     key_for_continue()
     return
 
-def menu_reportes ():
+def menu_reportes ():# main reports
     print('******************[REPORTES]*****************')
     print('* 1.----------------------CAMPERS INSCRITOS *')
     print('* 2.----------------------CAMPERS APROBADOS *')
@@ -94,7 +94,7 @@ def menu_reportes ():
     op = validar_opcion('Opción: ',1,6)
     return op
 
-def menu_matriculas ():
+def menu_matriculas (): # main tutions
     print('****************[MATRICULAS]***************')
     print('* 1.----------------------CREAR MATRICULA *')
     print('* 2.-----------------------VER MATRICULAS *')
@@ -102,4 +102,3 @@ def menu_matriculas ():
     print('*******************************************')
     op = validar_opcion('Opción: ',1,3)
     return op
-

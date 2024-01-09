@@ -143,4 +143,4 @@ def modificar_camper(): # Funcion para modificar campers
     except ValueError as e:
         print(f"Error: {e}. Asegúrese de ingresar un número válido como ID.")
 
-guardar_json(lista_campers, 'campers') # funcion para poder guardar informacion en JSON
+guardar_json(lista_campers, 'campers') # function to save info in json
