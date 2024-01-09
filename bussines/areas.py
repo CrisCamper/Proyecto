@@ -108,7 +108,6 @@ def agregar_campers(name_area, position_area):
       print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
       key_for_continue()    
 
-
 def listar_campers_area(name_area):
   lista_campers = load_campers_json()
   campers_encontrados = [camper for camper in lista_campers if camper.get('Ruta') == name_area]
@@ -123,7 +122,6 @@ def listar_campers_area(name_area):
   else:
       print(f'No se encontraron campers en el área {name_area}.')
       key_for_continue()
-
 
 def agregar_trainer(name_area, position_area): # Function to add a trainer
 

@@ -1,7 +1,19 @@
 [
     {
         "sputnik (netcore)": {
-            "Campers id": []
+            "Campers id": [
+                {
+                    "Nombres del Camper": "YYY",
+                    "Apellidos del Camper": "yyy",
+                    "Identificacion": 1,
+                    "Direccion": "1",
+                    "Acudiente": "1",
+                    "Numero de contacto": 1,
+                    "Telefono fijo": 1,
+                    "Estado del camper": "aprobado",
+                    "Ruta": "sputnik (netcore)"
+                }
+            ]
         }
     },
     {
