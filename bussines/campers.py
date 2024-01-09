@@ -1,7 +1,6 @@
 import json
 import os
-import random
-from commons.utils import limpiar_pantalla, promedio, guardar_json
+from commons.utils import limpiar_pantalla, promedio, guardar_json, key_for_continue
 
 def load_campers_json(): # Funcion para cargar campers.json y retornar una lista
     try:
@@ -18,39 +17,30 @@ def inscribir_camper (): # Funcion para inscribir un camper
     limpiar_pantalla()
     while True:
         try:
-            # Lista para el generador de datos random
-            name_list = ['Alvaro', 'Diego', 'Eduardo', 'Pepito', 'Hector', 'Esteban', 'Jorge', 'Farz']
-            last_names_list = ['Hernandez', 'Calizares', 'Hurtado', 'Sanchez', 'Ramirez', 'Buitrago', 'Washington']
-            directions_list = ['Bucaramanga', 'Jardin de aurora', 'Puerta del sol', 'Diamante 2', 'San martin', 'Niza', 'Caldas']
-            attendants_list = ['Roberto', 'Manuel', 'Hernan', 'John']
-            contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
-            permanent_contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
-
-            # Generador de datos random
-            for i in range (33,43):
-                name = random.choice(name_list)
-                last_names = random.choice(last_names_list)
-                id = i
-                direction = random.choice(directions_list)
-                attendant = random.choice(attendants_list)
-                contact = random.choice(contacts_list)
-                permanent_contact = random.choice(permanent_contacts_list)
-                state = 'inscrito'
-                # Creamos un diccionario con la informacion del camper
-                camper = { 
-                    'Nombres del Camper': name,
-                    'Apellidos del Camper': last_names,
-                    'Identificacion': id,
-                    'Direccion': direction,
-                    'Acudiente': attendant,
-                    'Numero de contacto': contact,
-                    'Telefono fijo': permanent_contact,
-                    'Estado del camper': state
-                }
-
-                # Agregamos aspirante_camper al final de la lista_campers
-                lista_campers.append(camper)
-                guardar_json(lista_campers, 'campers')
+            name = input('Type camper´s name: ')
+            last_names = input('Type camper´s last name: ')
+            id = int(input('Type camper´s number ID: '))
+            direction = input('Type camper´s direction: ')
+            attendant = input('Type camper´s attendant´s name: ')
+            contact = int(input('Type camper´s contact number: '))
+            permanent_contact = int(input('Type camper´s permanent contact: '))
+            state = 'inscrito'
+            path = 'none'
+            # Creamos un diccionario con la informacion del camper
+            camper = { 
+                'Nombres del Camper': name,
+                'Apellidos del Camper': last_names,
+                'Identificacion': id,
+                'Direccion': direction,
+                'Acudiente': attendant,
+                'Numero de contacto': contact,
+                'Telefono fijo': permanent_contact,
+                'Estado del camper': state,
+                'Ruta': path
+            }
+            # Agregamos aspirante_camper al final de la lista_campers
+            lista_campers.append(camper)
+            guardar_json(lista_campers, 'campers')
             
             # Bucle para preguntar si desea agregar un camper nuevo:
             while True:
@@ -58,87 +48,57 @@ def inscribir_camper (): # Funcion para inscribir un camper
                 another_entry = input('\n¿Desea agragar otro aspirante? [y/n]: ')
                 if another_entry.lower() == 'y':
                     print('Datos guardados exitosamente...')
-                    input('[Presione cualquier tecla para continuar]')
+                    key_for_continue()
                     break
                 elif another_entry.lower() == 'n':
                     print('Datos guardados exitosamente...')
-                    input('[Presione cualquier tecla para continuar]')
+                    key_for_continue()
                     return camper
                 else:
-                    input('¡Intenta ingresar un valor correcto! \n[Presiona cualquier tecla para continuar]')
+                    input('¡Intenta ingresar un valor correcto!')
+                    key_for_continue
 
         except ValueError:
             print('Error, asegurese de ingresar valores correctos')
-            input('[Presione cualquier tecla para continuar]')
+            key_for_continue()
         
 def registrar_camper (): # Funcion para crear un nuevo camper
-    while True:        
+    while True:   
         try:
-            ##teoric_note = int(input('Ingrese Nota de la prueba teorica del aspirante : '))
-            ##practical_note = int(input('Ingrese la Nota Practica del aspirane: '))
+            listar_campers()
+            if lista_campers == []:
+                print('No se encontró ningun camper')
+                key_for_continue()
 
-            ## funcion promedio para verificar el promedio entre la nota teorica y la nota practica
-            ##resultado_prueba = promedio(teoric_note,practical_note)
-            ##if resultado_prueba < 60:
-            ##    condicion_aspirante = 'Reprobado'
-            ##else:
-            ##    condicion_aspirante = 'aprobado'
-                
-            #Creamos las listas de los valores que se agragaran a los datos del campers    
-            name_list = ['Alvaro', 'Diego', 'Eduardo', 'Pepito', 'Hector', 'Esteban', 'Jorge', 'Farz']
-            last_names_list = ['Hernandez', 'Calizares', 'Hurtado', 'Sanchez', 'Ramirez', 'Buitrago', 'Washington']
-            directions_list = ['Bucaramanga', 'Jardin de aurora', 'Puerta del sol', 'Diamante 2', 'San martin', 'Niza', 'Caldas']
-            attendants_list = ['Roberto', 'Manuel', 'Hernan', 'John']
-            contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
-            permanent_contacts_list = [3183427373, 31245678940, 3479076453, 3212018765, 314689245]
-            states_list = ['aprobado','reprobado'] ## Lista temporal
-            #Según el promedio, el aspirante será aprobado o no
-            ##state = condicion_aspirante
+            id_modificar = int(input("Ingrese el ID del camper que desea registrar: "))
+            limpiar_pantalla()
+            camper_encontrado = None
+            for camper in lista_campers:
+                if camper['Identificacion'] == id_modificar and camper['Estado del camper'] == 'inscrito':
+                    camper_encontrado = camper
 
-            for i in range(33):
-                
-                # Generador de datos
-                name = random.choice(name_list)
-                last_names = random.choice(last_names_list)
-                id = i
-                direction = random.choice(directions_list)
-                attendant = random.choice(attendants_list)
-                contact = random.choice(contacts_list)
-                permanent_contact = random.choice(permanent_contacts_list)
-                state = random.choice(states_list)
-                # Creamos un diccionario con la informacion del camper
-                camper = { 
-                    'Nombres del Camper': name,
-                    'Apellidos del Camper': last_names,
-                    'Identificacion': id,
-                    'Direccion': direction,
-                    'Acudiente': attendant,
-                    'Numero de contacto': contact,
-                    'Telefono fijo': permanent_contact,
-                    'Estado del camper': state
-                }
-                lista_campers.append(camper)
-                guardar_json(lista_campers, 'campers')
-
-            while True: # Creamos un bucle temporal para Preguntar al usuario si desea ingresar un nuevo camper
-                limpiar_pantalla() # Limpiamos la pantalla
-                another_entry = input("¿Desea registrar otro Camper? (y/n): ")
-                if another_entry.lower() == 'y':
-                    print('Guardando...')
-                    # Rompemos el bucle interno para entrar al principal
-                    break
-                elif another_entry.lower() == 'n':
-                    print('Guardando...')
-                    print('Campers registrados exitosamente!')
-                    limpiar_pantalla() # limpiamos pantalla antes de pasar al menú principal
-                    return camper
-                else:
-                   print('Error, opcion invalida')
-
+            teoric_note = int(input('Ingrese Nota de la prueba teorica del aspirante : '))
+            practical_note = int(input('Ingrese la Nota Practica del aspirane: '))
+            #funcion promedio para verificar el promedio entre la nota teorica y la nota practica
+            resultado_prueba = promedio(teoric_note,practical_note)
+            if resultado_prueba < 60:
+                estado = 'reprobado'
+            else:
+                estado = 'aprobado'
+            if camper_encontrado:
+                camper_encontrado['Estado del camper'] = estado
+                # Guardar los cambios en el archivo JSON
+                guardar_json(lista_campers,'campers')
+                limpiar_pantalla() # limpiamos la pantalla para mostrar el siguiente mensaje gratificante :)
+                print(f"\nCamper con ID {id_modificar} registrado exitosamente.")
+            else:
+                print(f"\nNo se encontró un camper con el ID {id_modificar}.")
         except ValueError as e:  # Capturamos la excepción específica para errores de valor
             print(f"Error: {e}. Asegúrese de ingresar números en los campos que lo requieren.")
+            key_for_continue()
 
 def listar_campers(): # Funcion para listar los campers
+    print('Lista de campers')
     for camper in lista_campers:
         for data in camper:
             print(data,':',camper[data])

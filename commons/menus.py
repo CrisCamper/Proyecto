@@ -44,12 +44,10 @@ def menu_areas_entrenamiento (): # Main train area´s
 def submenu_areas(name_area): # Submain of main train area´s
     print(f'******[¡BIENVENIDO A {name_area}!]******')
     print('* 1.----------------AGREGAR CAMPER *')
-    print('* 2.---------------ELIMINAR CAMPER *')
-    print('* 3.----------------LISTAR CAMPERS *')
-    print('* 4.---------------AGREGAR TRAINER *')
-    print('* 5.--------------ELIMINAR TRAINER *')
-    print('* 6.---------------LISTAR TRAINERS *')
-    print('* 7.-------------------------SALIR *')
+    print('* 2.----------------LISTAR CAMPERS *')
+    print('* 3.---------------AGREGAR TRAINER *')
+    print('* 4.---------------LISTAR TRAINERS *')
+    print('* 5.-------------------------SALIR *')
     print('************************************')
-    op = validar_opcion('Opción: ',1,7)
+    op = validar_opcion('Opción: ',1,5)
     return op

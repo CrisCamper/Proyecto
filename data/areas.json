@@ -1,41 +1,31 @@
 [
     {
-        "sputnik": {
+        "sputnik (netcore)": {
             "Campers id": []
         }
     },
     {
-        "sputnik": {
-            "Trainers id": [
-                {
-                    "Nombres del trainer": "Farz",
-                    "Apellidos del trainer": "Buitrago",
-                    "Identificacion": 27,
-                    "Direccion": "San martin",
-                    "Numero de contacto": 3479076453,
-                    "Telefono fijo": 3479076453,
-                    "Ruta": "nodejs"
-                }
-            ]
-        }
-    },
-    {
-        "artemis": {
-            "Campers id": []
-        }
-    },
-    {
-        "artemis": {
+        "sputnik (netcore)": {
             "Trainers id": []
         }
     },
     {
-        "apolo": {
+        "artemis (nodejs)": {
             "Campers id": []
         }
     },
     {
-        "apolo": {
+        "artemis (nodejs)": {
+            "Trainers id": []
+        }
+    },
+    {
+        "apolo (java)": {
+            "Campers id": []
+        }
+    },
+    {
+        "apolo (java)": {
             "Trainers id": []
         }
     }
