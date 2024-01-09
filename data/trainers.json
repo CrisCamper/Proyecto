@@ -1,2 +1,22 @@
 [
+    {
+        "Nombres del trainer": "Carlos Mario",
+        "Apellidos del trainer": "Python javascript",
+        "Identificacion": 0,
+        "Direccion": "Mondongo",
+        "Numero de contacto": 312345264,
+        "Telefono fijo": 6143256789,
+        "Jornada": "ma\u00f1ana",
+        "Ruta": "sputnik (netcore)"
+    },
+    {
+        "Nombres del trainer": "Don JSON",
+        "Apellidos del trainer": "java notation",
+        "Identificacion": 1,
+        "Direccion": "Arduino",
+        "Numero de contacto": 31452365,
+        "Telefono fijo": 61616161,
+        "Jornada": "tarde",
+        "Ruta": "sputnik (netcore)"
+    }
 ]

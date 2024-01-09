@@ -150,7 +150,9 @@ def agregar_trainer(name_area, position_area): # Function to add a trainer
         
         lista_areas[position_area][name_area]['Trainers id'].append(trainer_found)
         guardar_json(lista_areas, 'areas')
-
+        print('Trainer agregado exitosamente')
+        key_for_continue()
+        break
       else:
 
         print('Trainer no encontrado o no disponible.')  

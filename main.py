@@ -169,7 +169,6 @@ def matriculas(): # Function general of tutions
     elif op == 3:
         print('Saliendo...')
 
-
 # start
 while True:
     limpiar_pantalla()
